@@ -3,7 +3,7 @@ package web.model;
 public class Car {
     private String model;
     private String color;
-    private int yearOfRelease;  // Исправлено название
+    private int yearOfRelease;
 
     public Car() {
     }
@@ -11,7 +11,7 @@ public class Car {
     public Car(String model, String color, int yearOfRelease) {
         this.model = model;
         this.color = color;
-        this.yearOfRelease = yearOfRelease;  // Исправлено
+        this.yearOfRelease = yearOfRelease;
     }
 
     public String getModel() {
@@ -30,11 +30,11 @@ public class Car {
         this.color = color;
     }
 
-    public int getYearOfRelease() {  // Исправлено название геттера
+    public int getYearOfRelease() {
         return yearOfRelease;
     }
 
-    public void setYearOfRelease(int yearOfRelease) {  // Исправлено название сеттера
+    public void setYearOfRelease(int yearOfRelease) {
         this.yearOfRelease = yearOfRelease;
     }
 
@@ -43,7 +43,7 @@ public class Car {
         return "Car{" +
                 "model='" + model + '\'' +
                 ", color='" + color + '\'' +
-                ", yearOfRelease=" + yearOfRelease +  // Исправлено
+                ", yearOfRelease=" + yearOfRelease +
                 '}';
     }
 }
