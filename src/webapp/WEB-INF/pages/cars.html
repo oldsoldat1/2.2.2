@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars List</title>
+</head>
+<body>
+<h1>Список советских машин</h1>
+
+<p>
+    <a href="/">Назад</a> |
+    Показать машины:
+    <a href="/cars?count=0">0</a>
+    <a href="/cars?count=1">1</a>
+    <a href="/cars?count=2">2</a>
+    <a href="/cars?count=3">3</a>
+    <a href="/cars?count=4">4</a>
+    <a href="/cars?count=5">Все 5</a>
+</p>
+
+<div th:if="${cars != null and not cars.empty}">
+    <p>Показать <span th:text="${#lists.size(cars)}"></span> из 5 машин</p>
+
+    <table border="1">
+        <tr>
+            <th>Номер</th>
+            <th>Модель</th>
+            <th>Цвет</th>
+            <th>Год выпуска</th>
+        </tr>
+        <tr th:each="car, stat : ${cars}">
+            <td th:text="${stat.index + 1}"></td>
+            <td th:text="${car.model}"></td>
+            <td th:text="${car.color}"></td>
+            <td th:text="${car.yearOfRelease}"></td>
+        </tr>
+    </table>
+</div>
+
+<div th:if="${cars == null or cars.empty}">
+    <p>Нет машин для отображения</p>
+</div>
+
+<p>Текущее количество: <span th:text="${requestedCount}"></span></p>
+</body>
+</html>
