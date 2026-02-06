@@ -21,6 +21,4 @@ public class HelloController {
 		return "index";
 	}
 
-
-	
 }
